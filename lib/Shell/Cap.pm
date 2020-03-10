@@ -45,4 +45,6 @@ Check whether shell supports pipe syntax.
 
 =head1 SEE ALSO
 
+The C<SHELL> environment variable.
+
 =cut

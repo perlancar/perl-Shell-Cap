@@ -7,6 +7,7 @@ package Shell::Cap;
 
 use strict 'vars', 'subs';
 use warnings;
+use Log::ger;
 
 use Exporter qw(import);
 our @EXPORT_OK = qw(
@@ -24,6 +25,7 @@ sub shell_supports_pipe {
         ShellQuote::Any::PERLANCAR::shell_quote($^X),
         "-e", ShellQuote::Any::PERLANCAR::shell_quote("print <STDIN>*3"),
     );
+    log_trace "Checking whether shell supports pipe with command $cmd";
     `$cmd` == 6 ? 1:0;
 }
 
